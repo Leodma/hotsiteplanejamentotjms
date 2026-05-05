@@ -71,31 +71,14 @@ ol {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   color: var(--blue);
-  min-width: 250px;
+  min-width: 190px;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  color: var(--white);
-  background: var(--blue);
-  border-bottom: 4px solid var(--gold);
-  border-radius: var(--radius);
-  font-weight: 700;
-}
-
-.brand strong,
-.brand small {
+.brand-logo {
   display: block;
-}
-
-.brand small {
-  color: var(--blue-light);
-  font-size: 0.76rem;
+  width: min(220px, 42vw);
+  height: auto;
 }
 
 .nav-menu {
@@ -154,7 +137,12 @@ ol {
   min-height: calc(100vh - 82px);
   display: flex;
   align-items: center;
-  background: linear-gradient(110deg, rgba(31, 63, 102, 0.96) 0%, rgba(31, 63, 102, 0.9) 48%, rgba(242, 242, 242, 1) 48%), var(--light);
+  background-image:
+    linear-gradient(110deg, rgba(31, 63, 102, 0.98) 0%, rgba(31, 63, 102, 0.98) 56%, transparent 56%, transparent 100%),
+    url("imagens/background-topo-campanha.webp");
+  background-position: center, right center;
+  background-size: cover, auto 100%;
+  background-repeat: no-repeat;
   color: var(--white);
 }
 
@@ -166,7 +154,7 @@ ol {
 }
 
 .hero-copy {
-  max-width: 680px;
+  max-width: 560px;
 }
 
 .eyebrow {
@@ -209,6 +197,16 @@ h3 {
   letter-spacing: 0;
 }
 
+.hero-title-image {
+  max-width: 560px;
+}
+
+.hero-title-image img {
+  display: block;
+  width: min(100%, 520px);
+  height: auto;
+}
+
 .hero p {
   max-width: 570px;
   font-size: 1.08rem;
@@ -218,6 +216,12 @@ h3 {
   color: #F5E6C7;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.hero-lead {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.8rem;
 }
 
 .hero-actions {
@@ -260,91 +264,6 @@ h3 {
 .btn-secondary:hover {
   color: var(--blue);
   background: var(--white);
-}
-
-.hero-visual {
-  min-height: 430px;
-  padding: 28px;
-  color: var(--blue);
-}
-
-.visual-panel {
-  position: relative;
-  min-height: 420px;
-  overflow: hidden;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(242, 242, 242, 0.98)), var(--white);
-  border: 1px solid rgba(31, 63, 102, 0.12);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.visual-panel::before {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background: linear-gradient(90deg, rgba(31, 63, 102, 0.08) 1px, transparent 1px), linear-gradient(0deg, rgba(31, 63, 102, 0.08) 1px, transparent 1px);
-  background-size: 42px 42px;
-}
-
-.visual-year {
-  position: absolute;
-  top: 34px;
-  left: 34px;
-  z-index: 1;
-  color: var(--blue);
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.visual-card {
-  position: absolute;
-  z-index: 1;
-  border-radius: var(--radius);
-  background: var(--white);
-  border-left: 6px solid var(--gold);
-  box-shadow: 0 16px 34px rgba(31, 63, 102, 0.16);
-}
-
-.visual-card::before,
-.visual-card::after {
-  position: absolute;
-  left: 24px;
-  content: "";
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(79, 111, 143, 0.24);
-}
-
-.visual-card::before {
-  top: 28px;
-  width: 58%;
-}
-
-.visual-card::after {
-  top: 54px;
-  width: 38%;
-}
-
-.visual-card.large {
-  right: 36px;
-  bottom: 44px;
-  width: 72%;
-  height: 132px;
-}
-
-.visual-card.medium {
-  right: 72px;
-  top: 132px;
-  width: 58%;
-  height: 106px;
-  border-left-color: var(--blue-light);
-}
-
-.visual-card.small {
-  left: 38px;
-  bottom: 114px;
-  width: 44%;
-  height: 92px;
 }
 
 .section-heading {
@@ -410,6 +329,14 @@ h3 {
 .team-card h2 {
   margin-bottom: 12px;
   font-size: 1.2rem;
+}
+
+.audience-icon {
+  display: block;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 22px;
+  object-fit: contain;
 }
 
 .importance,
@@ -521,6 +448,12 @@ h3 {
   margin: 0 auto 28px;
   color: var(--white);
   font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.final-cta p {
+  margin: -10px auto 28px;
+  color: rgba(255, 255, 255, 0.84);
+  font-weight: 700;
 }
 
 .site-footer {
@@ -655,6 +588,13 @@ h3 {
   gap: 18px;
 }
 
+.links-intro {
+  max-width: 720px;
+  margin-bottom: 12px;
+  color: var(--blue);
+  font-weight: 700;
+}
+
 .resource-link {
   display: flex;
   align-items: center;
@@ -771,7 +711,12 @@ textarea:focus {
 
   .hero {
     min-height: auto;
-    background: var(--blue);
+    background-image:
+      linear-gradient(180deg, rgba(31, 63, 102, 0.96) 0%, rgba(31, 63, 102, 0.96) 100%),
+      url("imagens/background-topo-campanha.webp");
+    background-position: center, right center;
+    background-size: cover, auto 100%;
+    background-repeat: no-repeat;
   }
 
   .hero-grid,
@@ -780,15 +725,6 @@ textarea:focus {
   .steps-layout,
   .contact-grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero-visual {
-    min-height: 330px;
-    padding: 0;
-  }
-
-  .visual-panel {
-    min-height: 330px;
   }
 
   .feature-grid.three,
@@ -817,10 +753,6 @@ textarea:focus {
     min-width: 0;
   }
 
-  .brand small {
-    display: none;
-  }
-
   .nav-menu {
     inset: 74px 0 auto 0;
   }
@@ -835,6 +767,10 @@ textarea:focus {
 
   .hero h1 {
     font-size: 2.45rem;
+  }
+
+  .hero-title-image img {
+    width: min(100%, 360px);
   }
 
   .hero-actions,
@@ -863,7 +799,4 @@ textarea:focus {
     flex-direction: column;
   }
 
-  .visual-card.large {
-    width: 78%;
-  }
 }
